@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ofertinha Click</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .product {
+            border: 1px solid #ddd;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            background: #fff;
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 15px;
+            margin-top: 10px;
+            background: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ofertas Especiais</h1>
+        <div id="products"></div>
+    </div>
+    <script>
+        const products = [
+            { name: "Produto 1", image: "https://via.placeholder.com/150", link: "https://www.sualoja.com/produto1" },
+            { name: "Produto 2", image: "https://via.placeholder.com/150", link: "https://www.sualoja.com/produto2" },
+            { name: "Produto 3", image: "https://via.placeholder.com/150", link: "https://www.sualoja.com/produto3" }
+        ];
+
+        const productContainer = document.getElementById("products");
+
+        products.forEach(product => {
+            const div = document.createElement("div");
+            div.classList.add("product");
+            div.innerHTML = `
+                <h2>${product.name}</h2>
+                <img src="${product.image}" alt="${product.name}">
+                <br>
+                <a href="${product.link}" class="button" target="_blank">Ver Oferta</a>
+            `;
+            productContainer.appendChild(div);
+        });
+    </script>
+</body>
+</html>
